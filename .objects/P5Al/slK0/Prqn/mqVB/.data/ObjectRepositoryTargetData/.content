@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="l_5-Eu56wkW0hD1irwcSHA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1860, 850, 25, 228" DesignTimeScaleFactor="1.5" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;wnd ctrlname='vGCMetadata' /&gt;&lt;ctrl idx='2' name='Vertical' role='scroll bar' /&gt;&lt;ctrl name='Position' role='indicator' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;wnd ctrlname='vGCMetadata' /&gt;&lt;ctrl name='Vertical' role='scroll bar' /&gt;&lt;ctrl name='Position' role='indicator' automationid='' check:text='Position' /&gt;" Guid="deac91a7-caaf-4622-b541-1bc86aba1882" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="9ab101564e717d0a373e1e47590b9a46.png" xmlns="">0i4CNQteMU0SvvORNhTw4fw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">MouseScroll</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

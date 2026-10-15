@@ -1,0 +1,735 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ExtensionData_BankGauranteeTracker" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_GuranteeType" Type="InArgument(x:String)" />
+    <x:Property Name="In_ReceivedDate" Type="InArgument(x:String)" />
+    <x:Property Name="In_Mode" Type="InArgument(x:String)" />
+    <x:Property Name="In_Bank" Type="InArgument(x:String)" />
+    <x:Property Name="In_GuranteeNo" Type="InArgument(x:String)" />
+    <x:Property Name="In_Amount" Type="InArgument(x:String)" />
+    <x:Property Name="In_Dated" Type="InArgument(x:String)" />
+    <x:Property Name="In_Expiry" Type="InArgument(x:String)" />
+    <x:Property Name="In_DaysToExpiry" Type="InArgument(x:String)" />
+    <x:Property Name="In_Ref" Type="InArgument(x:String)" />
+    <x:Property Name="In_Status" Type="InArgument(x:String)" />
+    <x:Property Name="In_FileNo" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ExtensionData_BankGauranteeTracker_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ExtensionData_BankGauranteeTracker" sap:VirtualizedContainerService.HintSize="681.3333333333333,9941.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="624.6666666666666,9918.666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Xpedeon Enterprise" sap:VirtualizedContainerService.HintSize="586,9656.666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Version="V2" WebDriverMode="Headless" WindowResize="Maximize">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,9359.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Status'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_13" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Status + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="w4BZWd6wFEKAfPBxzen-zw" DesignTimeRectangle="1121, 853, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Status Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Status Record 0' role='cell' automationid='' /&gt;" Guid="52f66c8c-a9e7-4b5b-b223-f51a5497aa3f" InformativeScreenshot="a88d46597846c0826c3b27c63f4c105e.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/tAnmoBjNA0m0C6pkqzqCUA" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 853, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Status' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Status' role='row header' automationid='' check:text='Status' /&gt;" Guid="e7570dd7-7ead-4976-a6e2-20c6645b1785" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_16" Message="[&quot;Entered Status : &quot;+In_Status]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Received date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_ReceivedDate + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="rWj1QVPZNESXcXKoiJAokA" DesignTimeRectangle="840, 881, 1020, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Received date Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Received date Record 0' role='cell' automationid='' /&gt;" Guid="75b7fbd4-2530-4c24-a39f-1a389599a8d6" InformativeScreenshot="b1f099f2f1541ac298b81b2d09e0891c.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/Hg9XyylxrUG1hp4EuExxvA" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="f023ea2f-58d4-4fcf-8ef5-71c94044cd66" CvTextArea="427, 886, 124, 18" CvTextArgument="Received date" CvType="Text" DesignTimeRectangle="404, 881, 435, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Received date' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Received date' role='row header' automationid='' check:text='Received date' /&gt;" Guid="c9225b6e-70ee-48f1-9106-4fb17ed23938" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Entered Received Date : &quot;+In_ReceivedDate]" />
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Released date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="20-08-2026[k(Enter)]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="fSk7egVGekeIPmjNGEh_aQ" DesignTimeRectangle="840, 910, 1020, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Released date Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Released date Record 0' role='cell' automationid='' /&gt;" Guid="2d558ce2-49d2-4c94-87ae-dd13d977aae7" InformativeScreenshot="91848da67eb8a6ff69989274d6c3a61e.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/rV0gpRu8NkCT29IaKxskHw" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="7a6cfced-19ce-4a7e-a92c-75772abc20c5" CvTextArea="427, 913, 124, 19" CvTextArgument="Released date" CvType="Text" DesignTimeRectangle="404, 910, 435, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Released date' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Released date' role='row header' automationid='' check:text='Released date' /&gt;" Guid="32ecb7b0-e118-453b-8903-2c690ac7f515" SearchSteps="Selector, FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Gurantee Type'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_GuranteeType + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="TfHhWMKzxUeLcTrAYUmQvg" DesignTimeRectangle="1121, 967, 739, 26" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee Type Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee Type Record 0' role='cell' automationid='' /&gt;" Guid="f671f700-7e8d-4729-8b31-3649536aeba7" InformativeScreenshot="fbcbb1a5d6b0054a9956e0a8ceb69771.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/qyebum_FVEqLVVU-1AXZDA" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="d862487a-086d-49d8-9877-2082401c2d97" CvTextArea="427, 973, 129, 21" CvTextArgument="Gurantee Type" CvType="Text" DesignTimeRectangle="404, 967, 715, 26" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee Type' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee Type' role='row header' automationid='' check:text='Gurantee Type' /&gt;" Guid="c0fa9daf-3c67-470a-849b-1073ab8460e8" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Entered Gurantee Type : &quot;+ In_GuranteeType]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Mode'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Mode + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="7Z5d21SizkaMI-UYh-dSLQ" DesignTimeRectangle="840, 705, 1020, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Mode Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Mode Record 0' role='cell' automationid='' /&gt;" Guid="a032f9e0-a8a3-4c80-8c2e-c4cef308151c" InformativeScreenshot="70fa11e8493a322cd12704deea37de45.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/QG_0o2LR40mSiN2GiA5r3g" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="3992118e-34ae-4855-8d48-5d33d3ca3b92" CvTextArea="426, 709, 51, 18" CvTextArgument="Mode" CvType="Text" DesignTimeRectangle="404, 705, 435, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Mode' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Mode' role='row header' automationid='' check:text='Mode' /&gt;" Guid="32d7fdd5-c902-4ae5-b45c-ab1bf9707d23" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Entered Mode : &quot;+ In_Mode]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Bank'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Bank + &quot;[k(Enter)]&quot;]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="qIcfzplQWEy0T-pGpPxvRA" DesignTimeRectangle="1121, 799, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Bank Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Bank Record 0' role='cell' automationid='' /&gt;" Guid="e0d6758a-bc6b-4e3c-974d-d91c742f7b04" InformativeScreenshot="bb3ad2464ecd80a520991b9ef9196027.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/-GwH9URroUSZrLuS7zPCKQ" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CVScreenId="557f54ad-8cf8-4dfb-8008-03c4d984427f" CvTextArea="426, 804, 46, 18" CvTextArgument="Bank" CvType="Text" DesignTimeRectangle="404, 799, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Bank' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Bank' role='row header' automationid='' check:text='Bank' /&gt;" Guid="e93335c6-add7-4ca2-8927-c5c8e0f4fa4e" SearchSteps="Selector, FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Entered Bank : &quot;+ In_Bank]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ContinueOnError="False" DisplayName="Type Into 'Gurantee No'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_GuranteeNo]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="V09Bu_hdJ02b8PcOx_K49A" DesignTimeRectangle="1121, 816, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee No Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee No Record 0' role='cell' automationid='' /&gt;" Guid="eee517e8-05b7-48f9-b565-1f2eba4f51c2" InformativeScreenshot="f606fbcc6cfa9733648d7e8679c94738.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/ZXlsf-WrskeWg5p8jGV83A" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 816, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee No' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee No' role='row header' automationid='' check:text='Gurantee No' /&gt;" Guid="846ac05b-f9e3-481c-82a2-76e976a9c7a3" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_10" Message="[&quot;Entered Gurantee No : &quot;+ In_GuranteeNo]" />
+                <Assign DisplayName="Assign - F2" sap:VirtualizedContainerService.HintSize="518,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[In_Amount]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[CDbl(In_Amount).ToString("F2")]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Amount'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Amount + &quot;[k(Enter)]&quot;]" Timeout="30" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="k6at6XB9GUSMD2-lg7wVoQ" DesignTimeRectangle="1121, 856, 739, 24" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Amount Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Amount Record 0' role='cell' automationid='' /&gt;" Guid="ae58a2bd-3ada-492f-bc78-40b86b5542ce" InformativeScreenshot="2bfb5a18604b1933b9a01d59db56e996.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/gNCpDDV1d0eiZZ07X6xH_Q" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 856, 715, 24" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Amount' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Amount' role='row header' automationid='' check:text='Amount' /&gt;" Guid="bbb0bc17-cfac-4ae3-87fe-70fecb5fd535" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;Entered Amount : &quot;+ In_Amount]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_19" Message="[&quot;In_Dated : &quot;+In_Dated]" />
+                <Assign sap:VirtualizedContainerService.HintSize="518,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[In_Dated]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(In_Dated),"", DateTime.ParseExact(In_Dated, "dd-MMM-yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy"))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <If Condition="[Not String.IsNullOrWhiteSpace(In_Dated)]" DisplayName="If - In_Dated Not Null" sap:VirtualizedContainerService.HintSize="518,1981.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,1718.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="str_GetDated" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.2" DisplayName="Type Into 'Dated'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="450,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Dated.Split(&quot;-&quot;C)(0)]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="7F7L0pfONU-8DN0fe8KXLw" DesignTimeRectangle="1121, 881, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Dated Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Dated Record 0' role='cell' automationid='' /&gt;" Guid="dc274162-a793-44ee-bee1-4d100cf23097" InformativeScreenshot="86e88966966239a4799aa32994034d5b.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/_26xPES9Ak2wwxDIq7AHRQ" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="404, 881, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Dated' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Dated' role='row header' automationid='' check:text='Dated' /&gt;" Guid="996b993a-75dd-46e6-9383-3e3ea54adc09" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DeselectAfter="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[In_Dated.Split(&quot;-&quot;C)(1)]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="94c13872-01e3-4abe-b64c-aa0d38da4ace">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[In_Dated.Split(&quot;-&quot;C)(2)]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="94c13872-01e3-4abe-b64c-aa0d38da4ace">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'WindowsForms10.EDIT.app...'" sap:VirtualizedContainerService.HintSize="450,139.33333333333334" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b9302a0-104b-43e4-a35b-5bec518c89aa" InformativeScreenshot="26fd7c7f7582d9b0c3c9a45f386b2596" Selector="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;wnd ctrlname='vGCMetadata' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.EDIT.*' title='*' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="x:String">[str_GetDated]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;str_GetDated : &quot;+str_GetDated]" />
+                      <If Condition="[In_Dated.Equals(str_GetDated.Trim)]" sap:VirtualizedContainerService.HintSize="450,746.6666666666666" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,230" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,170" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;Entered Dated : &quot;+ In_Dated]" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,354" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;Entered Incorrect Dated : &quot;+ In_Dated]" />
+                            <Throw Exception="[New Exception(&quot;Incorrect Dated value Entered : &quot; + In_Dated)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="0.2" DisplayName="Type Into 'Dated'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Dated + &quot;[k(Enter)]&quot;]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="7F7L0pfONU-8DN0fe8KXLw" DesignTimeRectangle="1121, 881, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Dated Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Dated Record 0' role='cell' automationid='' /&gt;" Guid="dc274162-a793-44ee-bee1-4d100cf23097" InformativeScreenshot="86e88966966239a4799aa32994034d5b.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/_26xPES9Ak2wwxDIq7AHRQ" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="404, 881, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Dated' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Dated' role='row header' automationid='' check:text='Dated' /&gt;" Guid="996b993a-75dd-46e6-9383-3e3ea54adc09" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_25" Message="[&quot;In_Expiry : &quot;+In_Expiry]" />
+                <Assign sap:VirtualizedContainerService.HintSize="518,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[In_Expiry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(In_Expiry),"", DateTime.ParseExact(In_Expiry, "dd-MMM-yyyy", System.Globalization.CultureInfo.InvariantCulture).ToString("dd-MM-yyyy"))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="518,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,305.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Expiry'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382,245.33333333333334" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Expiry + &quot;[k(Enter)]&quot;]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="fIlSJO4sK0CtKvVyWkiyIQ" DesignTimeRectangle="1121, 910, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Expiry Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Expiry Record 0' role='cell' automationid='' /&gt;" Guid="793639f9-cd89-4c72-b2d5-7aa1355a31ff" InformativeScreenshot="8933940320973860fce3dc7f97e04132.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/rUBZAIlx0EyJYe-59FQi-Q" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="404, 910, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Expiry' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Expiry' role='row header' automationid='' check:text='Expiry' /&gt;" Guid="17d6d9c4-6456-48dc-90b5-120515a6189a" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <If Condition="[Not String.IsNullOrWhiteSpace(In_Expiry)]" DisplayName="If - In_Dated Not Null" sap:VirtualizedContainerService.HintSize="518,1981.3333333333333" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,1718.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="str_GetExpiry" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Expiry'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="450,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Expiry.Split(&quot;-&quot;C)(0)]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="fIlSJO4sK0CtKvVyWkiyIQ" DesignTimeRectangle="1121, 910, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Expiry Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Expiry Record 0' role='cell' automationid='' /&gt;" Guid="793639f9-cd89-4c72-b2d5-7aa1355a31ff" InformativeScreenshot="8933940320973860fce3dc7f97e04132.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/rUBZAIlx0EyJYe-59FQi-Q" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="404, 910, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Expiry' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Expiry' role='row header' automationid='' check:text='Expiry' /&gt;" Guid="17d6d9c4-6456-48dc-90b5-120515a6189a" SearchSteps="Selector, FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DeselectAfter="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[In_Expiry.Split(&quot;-&quot;C)(1)]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="94c13872-01e3-4abe-b64c-aa0d38da4ace">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into" sap:VirtualizedContainerService.HintSize="450,169.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[In_Expiry.Split(&quot;-&quot;C)(2)]">
+                        <ui:TypeInto.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="94c13872-01e3-4abe-b64c-aa0d38da4ace">
+                            <ui:Target.Selector>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:Target.Selector>
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:TypeInto.Target>
+                      </ui:TypeInto>
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'WindowsForms10.EDIT.app...'" sap:VirtualizedContainerService.HintSize="450,139.33333333333334" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b9302a0-104b-43e4-a35b-5bec518c89aa" InformativeScreenshot="ab687cbf3bd228548e7fd3edbdc17a4b" Selector="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;wnd ctrlname='vGCMetadata' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.EDIT.*' title='*' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="x:String">[str_GetExpiry]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_22" Message="[&quot;str_GetExpiry : &quot;+str_GetExpiry]" />
+                      <If Condition="[In_Expiry.Equals(str_GetExpiry.Trim)]" sap:VirtualizedContainerService.HintSize="450,746.6666666666666" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,230" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,170" sap2010:WorkflowViewState.IdRef="LogMessage_13" Message="[&quot;Entered Expiry : &quot;+ In_Expiry]">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:LogMessage>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,354" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_24" Message="[&quot;Entered Incorrect Expiry : &quot;+ In_Expiry]" />
+                            <Throw Exception="[New Exception(&quot;Incorrect  Expiry value Entered : &quot; + In_Expiry)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <Assign sap:VirtualizedContainerService.HintSize="518,118" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[In_DaysToExpiry]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(
+    String.IsNullOrWhiteSpace(In_Expiry),
+    "",
+    (DateTime.ParseExact(
+        In_Expiry,
+        "dd-MM-yyyy",
+        System.Globalization.CultureInfo.InvariantCulture
+    ) - DateTime.Today).Days.ToString
+)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Days To Expiry'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_DaysToExpiry]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="Uuz74IYMI0-bnUmYFFf14w" DesignTimeRectangle="1121, 938, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Days To Expiry Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Days To Expiry Record 0' role='cell' automationid='' /&gt;" Guid="3720da80-4635-4298-9286-71318ff6948e" InformativeScreenshot="a3894e1df17157cff0279c7530800f70.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/ulJQS4APvk-Zx3FfN03b5Q" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 938, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Days To Expiry' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Days To Expiry' role='row header' automationid='' check:text='Days To Expiry' /&gt;" Guid="21ecd706-0386-4e08-bb47-c091ff39acf1" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Entered Days To Expiry : &quot;+ In_DaysToExpiry]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ref#'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_Ref]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="1121, 780, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Ref# Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Ref# Record 0' role='cell' automationid='' /&gt;" Guid="39edcac9-cc44-44dc-8054-e4797ec9e43a" InformativeScreenshot="b662372769470458797ddfeda7cc9122.png" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 780, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Ref#' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Ref#' role='row header' automationid='' check:text='Ref#' /&gt;" Guid="6e8bf33c-b30b-49e3-b134-a9228d1accd0" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15" Message="[&quot;Entered Ref : &quot;+ In_Ref]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'FileNo#'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="518,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="aacaa5ce-c08f-4133-8908-50cb9ddfaf17" Text="[In_FileNo]" Version="V4">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="cBBDykCzGUmM48OA1tJ3ig" DesignTimeRectangle="1121, 710, 739, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='File No Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='File No Record 0' role='cell' automationid='' /&gt;" Guid="cac3e5e1-c6db-4c9d-9dbe-ee009e197490" InformativeScreenshot="337dba7ebc7b4198b15cb2ff3d050857.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/0AAcuzUAEUeCoZP7ZT05Rw" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="404, 710, 715, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='File No' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='File No' role='row header' automationid='' check:text='File No' /&gt;" Guid="04ec7e3f-bd93-4bed-8a60-cd49d61e1ea5" SearchSteps="Selector, FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,172.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_18" Message="[&quot;Entered File no : &quot;+ In_FileNo]" />
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-12, -12, 1944, 1152" ContentHash="hfsgpepWDESlGWeRFLHsow" FilePath="C:\Program Files\Algorithms Software Pvt. Ltd\Xpedeon Enterprise Client 3.1 (x64)\xpedeonenterprise.net.exe" IconBase64="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" InformativeScreenshot="1051b06d9c48f9e2c3841b052cc75bb4.png" Reference="4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw" Selector="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" Version="V1" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="590.6666666666666,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="416,351.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;BankGuaranteeTracker_Update : &quot;+exception.Message]" />
+              <Throw Exception="[New SystemException(exception.Message)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Status",
+  "Type": "Element",
+  "Id": "tAnmoBjNA0m0C6pkqzqCUA",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/tAnmoBjNA0m0C6pkqzqCUA",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T12:39:34.9432825Z",
+  "Updated": "2026-08-20T12:39:34.9432825Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,132 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdateReportStatus_GuaranteeLetter" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="In_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="In_RPAProcessStatus" Type="InArgument(x:String)" />
+    <x:Property Name="In_extensionData" Type="InArgument(njl:JObject)" />
+    <x:Property Name="In_Dt_GuaranteeLetter" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="In_RPARemarks" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>UpdateReportStatus_GuaranteeLetter_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Azure</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="UpdateReportStatus_GuaranteeLetter" sap:VirtualizedContainerService.HintSize="855.9999999999999,933.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;002_UpdateReportStatus_GuaranteeLetter : Start&quot;]" />
+    <ui:ClearDataTable DataTable="[In_Dt_GuaranteeLetter]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;QueueReference&quot;), In_TransactionItem.SpecificContent(&quot;QueueReference&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Document Type&quot;), In_TransactionItem.SpecificContent(&quot;Document Type&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Document Type In Xpedeon&quot;), In_TransactionItem.SpecificContent(&quot;Document Type In Xpedeon&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Company Name&quot;), In_TransactionItem.SpecificContent(&quot;Company Name&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Project&quot;), In_TransactionItem.SpecificContent(&quot;Project&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Role&quot;), In_TransactionItem.SpecificContent(&quot;Role&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Entity&quot;), In_TransactionItem.SpecificContent(&quot;Entity&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Subject&quot;), In_TransactionItem.SpecificContent(&quot;Subject&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;GuaranteeType&quot;), In_extensionData(&quot;GuaranteeType&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;Mode&quot;), In_extensionData(&quot;Mode&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;Bank&quot;), In_extensionData(&quot;Bank&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;GuaranteeNo&quot;), In_extensionData(&quot;GuaranteeNo&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;GuaranteeAmount&quot;), In_extensionData(&quot;GuaranteeAmount&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;Currency&quot;), In_extensionData(&quot;Currency&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Dated&quot;), In_TransactionItem.SpecificContent(&quot;Dated&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;Expiry&quot;), In_TransactionItem.SpecificContent(&quot;Expiry&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;DaysToExpiry&quot;), In_TransactionItem.SpecificContent(&quot;DaysToExpiry&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;RefNo&quot;), In_extensionData(&quot;RefNo&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;FileNo&quot;), In_extensionData(&quot;FileNo&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;BeneficiaryName&quot;), In_extensionData(&quot;BeneficiaryName&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;AddressDetails&quot;), In_extensionData(&quot;AddressDetails&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;GuaranteePercentage&quot;), In_extensionData(&quot;GuaranteePercentage&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;ExpectedGuaranteeAmount&quot;), In_TransactionItem.SpecificContent(&quot;ExpectedGuaranteeAmount&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;GuaranteeAmountMatch&quot;), In_TransactionItem.SpecificContent(&quot;GuaranteeAmountMatch&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;NetAmount&quot;), In_extensionData(&quot;NetAmount&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;VATAmount&quot;), In_extensionData(&quot;VATAmount&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;TotalAmount&quot;), In_extensionData(&quot;TotalAmount&quot;), Nothing),&#xD;&#xA;If(In_extensionData IsNot Nothing AndAlso In_extensionData.ContainsKey(&quot;PaymentTerms&quot;), In_extensionData(&quot;PaymentTerms&quot;), Nothing),&#xD;&#xA;If(In_TransactionItem.SpecificContent.ContainsKey(&quot;SourceFileName&quot;), In_TransactionItem.SpecificContent(&quot;SourceFileName&quot;), Nothing),&#xD;&#xA;If(In_Config.ContainsKey(&quot;ReceivedDate&quot;), In_Config(&quot;ReceivedDate&quot;), Now.ToString(&quot;dd/MM/yyyy&quot;)),&#xD;&#xA;In_RPAProcessStatus,&#xD;&#xA;In_RPARemarks&#xD;&#xA;}]" DataTable="[In_Dt_GuaranteeLetter]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:AppendRange DataTable="[In_Dt_GuaranteeLetter]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="[in_Config(&quot;GuaranteeLetterSheetName&quot;).ToString]" WorkbookPath="[in_Config(&quot;ReportPath&quot;).ToString]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;002_UpdateReportStatus_GuaranteeLetter : End&quot;]" />
+  </Sequence>
+</Activity>

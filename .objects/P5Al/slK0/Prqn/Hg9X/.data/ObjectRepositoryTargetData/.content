@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="rWj1QVPZNESXcXKoiJAokA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="840, 881, 1020, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Received date Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Received date Record 0' role='cell' automationid='' /&gt;" Guid="75b7fbd4-2530-4c24-a39f-1a389599a8d6" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="f023ea2f-58d4-4fcf-8ef5-71c94044cd66" CvTextArea="427, 886, 124, 18" CvTextArgument="Received date" CvType="Text" DesignTimeRectangle="404, 881, 435, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Received date' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Received date' role='row header' automationid='' check:text='Received date' /&gt;" Guid="c9225b6e-70ee-48f1-9106-4fb17ed23938" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b1f099f2f1541ac298b81b2d09e0891c.png" xmlns="">02tpJ-ckFW0qbCO0rKTnJgQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

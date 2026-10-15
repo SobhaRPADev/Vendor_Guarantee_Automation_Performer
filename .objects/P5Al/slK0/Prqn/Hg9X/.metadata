@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Received date",
+  "Type": "Element",
+  "Id": "Hg9XyylxrUG1hp4EuExxvA",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/Hg9XyylxrUG1hp4EuExxvA",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T06:21:51.0066073Z",
+  "Updated": "2026-08-20T06:21:51.0066073Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

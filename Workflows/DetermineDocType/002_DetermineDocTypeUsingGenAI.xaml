@@ -1,0 +1,260 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_002_DetermineDocTypeUsingGenAI" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CC885626ECD_v2_sub_generateChatCompletion_Create.Bundle;assembly=CC885626ECD_v2_sub_g.L82ya24dDtI1eWigR2e4cqS4" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_DocText" Type="InArgument(x:String)" />
+    <x:Property Name="Out_DocType" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>_002_DetermineDocTypeUsingGenAI_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_002_DetermineDocTypeUsingGenAI" sap:VirtualizedContainerService.HintSize="552.6666666666666,1510.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_ClsfyUserPromptFilePath" />
+      <Variable x:TypeArguments="x:String" Name="str_classification_prompt" />
+      <Variable x:TypeArguments="x:String" Name="str_SystemPrompt" />
+      <Variable x:TypeArguments="x:String" Name="out_classification_result" />
+      <Variable x:TypeArguments="njl:JObject" Name="classificationJson" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;DetermineDocTypeUsingGenAI : Start&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_ClsfyUserPromptFilePath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[Path.Combine(Environment.CurrentDirectory,
+             "Data",
+             "Input",
+             "PromptFiles",
+             "Classification.txt")]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[str_SystemPrompt]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">You are an enterprise document classification engine.
+
+Rules:
+
+- Return only valid JSON.
+- Return exactly one JSON object.
+- Do not return markdown.
+- Do not return explanations.
+- Do not invent values.
+- Return only supported document types.
+- A PDF may contain multiple business documents.
+- Return one object per business document identified.
+- If no supported business document exists, return:
+  {
+    'Documents':[]
+  }</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:ReadTextFile File="{x:Null}" Content="[str_classification_prompt]" DisplayName="Read Text File - Classification" FileName="[str_ClsfyUserPromptFilePath]" sap:VirtualizedContainerService.HintSize="478.6666666666667,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadTextFile>
+    <isactr:ConnectorActivity Configuration="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" ConnectionId="898849e8-1a16-4fcf-a360-1a024ef6f94b" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="478.6666666666667,428" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+      <isactr:ConnectorActivity.FieldObjects>
+        <isactr:FieldObject Name="prompt" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String" xml:space="preserve">[str_classification_prompt + Environment.NewLine + Environment.NewLine +  In_DocText]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+        <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+        <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+        <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+        <isactr:FieldObject Name="topK" Type="FieldArgument" />
+        <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">None</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="_file" Type="FieldArgument" />
+        <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+        <isactr:FieldObject Name="topP" Type="FieldArgument" />
+        <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+        <isactr:FieldObject Name="max_tokens" Type="FieldArgument" />
+        <isactr:FieldObject Name="temperature" Type="FieldArgument" />
+        <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument" />
+        <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+        <isactr:FieldObject Name="presence_penalty" Type="FieldArgument" />
+        <isactr:FieldObject Name="n" Type="FieldArgument" />
+        <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+        <isactr:FieldObject Name="_stop" Type="FieldArgument" />
+        <isactr:FieldObject Name="modelName" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="instruction" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <InArgument x:TypeArguments="x:String">[str_SystemPrompt]</InArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_text" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String">[out_classification_result]</OutArgument>
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+        <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+          <isactr:FieldObject.Value>
+            <OutArgument x:TypeArguments="x:String" />
+          </isactr:FieldObject.Value>
+        </isactr:FieldObject>
+      </isactr:ConnectorActivity.FieldObjects>
+    </isactr:ConnectorActivity>
+    <Assign DisplayName="Assign - classificationJson" sap:VirtualizedContainerService.HintSize="478.6666666666667,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[classificationJson]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[JObject.Parse(out_classification_result)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Assign - Out_DocType" sap:VirtualizedContainerService.HintSize="478.6666666666667,118" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Out_DocType]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(
+    classificationJson.ContainsKey("DocumentType") AndAlso
+    classificationJson("DocumentType") IsNot Nothing AndAlso
+    classificationJson("DocumentType").Type &lt;&gt; Newtonsoft.Json.Linq.JTokenType.Null,
+    classificationJson("DocumentType").ToString.Trim,
+    String.Empty
+)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Out_DocType : &quot;+Out_DocType]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="478.6666666666667,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;DetermineDocTypeUsingGenAI : End&quot;]" />
+  </Sequence>
+</Activity>

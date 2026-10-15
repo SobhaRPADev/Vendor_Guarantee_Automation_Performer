@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fSk7egVGekeIPmjNGEh_aQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="840, 910, 1020, 27" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Released date Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Released date Record 0' role='cell' automationid='' /&gt;" Guid="2d558ce2-49d2-4c94-87ae-dd13d977aae7" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="7a6cfced-19ce-4a7e-a92c-75772abc20c5" CvTextArea="427, 913, 124, 19" CvTextArgument="Released date" CvType="Text" DesignTimeRectangle="404, 910, 435, 27" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Released date' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Released date' role='row header' automationid='' check:text='Released date' /&gt;" Guid="32ecb7b0-e118-453b-8903-2c690ac7f515" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="91848da67eb8a6ff69989274d6c3a61e.png" xmlns="">0mrm2raRccUWHO_TS19402g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

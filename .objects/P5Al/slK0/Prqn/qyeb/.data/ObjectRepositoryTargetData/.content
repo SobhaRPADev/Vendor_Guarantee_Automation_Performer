@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TfHhWMKzxUeLcTrAYUmQvg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1121, 967, 739, 26" DesignTimeScaleFactor="1.5" ElementType="Cell" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee Type Record 0' role='cell' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Data Panel' role='pane' /&gt;&lt;ctrl name='Record 0' role='column' /&gt;&lt;ctrl name='Gurantee Type Record 0' role='cell' automationid='' /&gt;" Guid="f671f700-7e8d-4729-8b31-3649536aeba7" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="d862487a-086d-49d8-9877-2082401c2d97" CvTextArea="427, 973, 129, 21" CvTextArgument="Gurantee Type" CvType="Text" DesignTimeRectangle="404, 967, 715, 26" FullSelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee Type' role='row header' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;ctrl name='Row Headers' role='pane' /&gt;&lt;ctrl name='Gurantee Type' role='row header' automationid='' check:text='Gurantee Type' /&gt;" Guid="c0fa9daf-3c67-470a-849b-1073ab8460e8" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="fbcbb1a5d6b0054a9956e0a8ceb69771.png" xmlns="">09kf9NI8dT0OkM31G1Y3gDg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

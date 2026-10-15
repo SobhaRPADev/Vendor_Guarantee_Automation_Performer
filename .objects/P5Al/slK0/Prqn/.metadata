@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Xpedeon Enterprise",
+  "Type": "Screen",
+  "Id": "PrqnyNbK_UW-8vrVFk7frw",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/slK0SCFDEk6AZNKVE5PR3A",
+  "Created": "2026-08-20T06:15:19.3158427Z",
+  "Updated": "2026-08-20T06:15:19.3158427Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

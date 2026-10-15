@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Editing control",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "ZXlsf-WrskeWg5p8jGV83A",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/ZXlsf-WrskeWg5p8jGV83A",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T09:51:12.1436105Z",
+  "Updated": "2026-08-20T09:51:12.1436105Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

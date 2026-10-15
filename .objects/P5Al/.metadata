@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Xpedeon Enterprise",
+  "Type": "App",
+  "Id": "P5Al_kIgV0GnDapD5ca1fw",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/P5Al_kIgV0GnDapD5ca1fw",
+  "Created": "2026-08-20T06:15:19.1186491Z",
+  "Updated": "2026-08-20T06:15:19.1186491Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

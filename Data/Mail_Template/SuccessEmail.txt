@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family: Arial; font-size:10pt;}
+</style>
+</head>
+<body>
+<p>
+<br><br>
+Dear Team,<br><br>
+This is a message from Digital RPA bot, Please do not reply<br><br>
+
+{0}
+<br><br>
+Thanks,<br>
+<div style="color:#BD8B13">Digital RPA BOT</div><br>
+</body>
+</html>

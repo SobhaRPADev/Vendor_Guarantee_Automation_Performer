@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Bank guarantee Tracker",
+  "Type": "Screen",
+  "Id": "uifMQFesWUy8YM4GORdC3Q",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/uifMQFesWUy8YM4GORdC3Q",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/slK0SCFDEk6AZNKVE5PR3A",
+  "Created": "2026-09-25T05:34:42.266554Z",
+  "Updated": "2026-09-25T05:34:42.266554Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

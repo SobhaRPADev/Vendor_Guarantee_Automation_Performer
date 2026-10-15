@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="I88l881j10uTm7cYLtN6cQ" Reference="4Yi7nbuRyUibEjenBUYEyQ/WrwZf99KBUCigi7a8_mj-Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1128, 1022, 711, 21" DesignTimeScaleFactor="1.5" FuzzySelectorArgument="&lt;wnd ctrlname='xpDocumentManagement' /&gt;&lt;wnd ctrlname='layoutControl2' /&gt;&lt;wnd ctrlname='xpucMetadata1' /&gt;&lt;wnd ctrlname='vGCMetadata' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Editing control' cls='WindowsForms10.EDIT.*' title='25-09-2026' check:text='22-09-2026' /&gt;" Guid="60a19d21-9878-4981-9249-5a513cb05f7d" ImageBase64="" ScopeSelectorArgument="&lt;wnd app='xpedeonenterprise.net.exe' ctrlname='RibbonForm1' /&gt;&lt;wnd aaname='Bank guarantee Tracker' cls='WindowsForms10.MDICLIENT.*' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b2ea2135638581a88f73b8263da0f322.png" xmlns="">0AlaA96_Tg0-DEnFnV6r0ww</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Editing control Open De…",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "-GwH9URroUSZrLuS7zPCKQ",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/-GwH9URroUSZrLuS7zPCKQ",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T09:26:16.9818979Z",
+  "Updated": "2026-08-20T09:26:16.9818979Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

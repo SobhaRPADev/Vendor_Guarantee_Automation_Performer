@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Mouse Scroll 'Position'",
+  "Type": "Element",
+  "Id": "i9wykn-zCUivNKpVvPeqiw",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/i9wykn-zCUivNKpVvPeqiw",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T12:52:35.2091497Z",
+  "Updated": "2026-08-20T12:52:35.2091497Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

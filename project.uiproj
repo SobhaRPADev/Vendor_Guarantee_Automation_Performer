@@ -1,0 +1,6 @@
+{
+  "ProjectType": "Process",
+  "Name": "Vendor Guarantee Automation",
+  "Description": "The process involves the automated registration and monitoring of Vendor Guarantees, including the extraction and validation of guarantee details from vendor-submitted documents and Purchase Orders, updating guarantee records in Xpedeon and the Bank Guarantee Tracker, tracking recovery balances, monitoring guarantee expiries, and triggering reminder notifications to relevant stakeholders until the guarantee is recovered, released, or closed.",
+  "MainFile": "Main.xaml"
+}

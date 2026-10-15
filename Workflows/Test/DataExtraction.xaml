@@ -1,0 +1,650 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DataExtraction" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="DataExtraction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/documentunderstanding-ml" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p6="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p9="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.CC885626ECD_v2_sub_generateChatCompletion_Create.Bundle;assembly=CC885626ECD_v2_sub_g.L82ya24dDtI1eWigR2e4cqS4" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.DU.Shared.Utils</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities.Utils</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Training</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Training</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>CC885626ECD_v2_sub_g.L82ya24dDtI1eWigR2e4cqS4</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataExtraction" sap:VirtualizedContainerService.HintSize="552.6666666666666,3878" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="Taxonomy" />
+      <Variable x:TypeArguments="x:String" Name="in_FilePath" />
+      <Variable x:TypeArguments="x:String" Name="DocText" />
+      <Variable x:TypeArguments="p4:Document" Name="DOM" />
+      <Variable x:TypeArguments="p8:ClassificationResult[]" Name="ClassificationResults" />
+      <Variable x:TypeArguments="x:String" Name="Promt" />
+      <Variable x:TypeArguments="x:String" Name="out_Text" />
+      <Variable x:TypeArguments="x:String" Name="inFolderPath" />
+      <Variable x:TypeArguments="sd2:DataTable" Name="dt_temp" />
+      <Variable x:TypeArguments="njl:JObject" Name="jsonObj" />
+      <Variable x:TypeArguments="x:Boolean" Name="fileExist" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BuildDataTable DataTable="[dt_temp]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="502,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;DocumentDate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;ExpiryDate&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;GuaranteeNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TypeOfGuarantee&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;GuaranteeAmount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NetAmount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;VATAmount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TotalAmount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;RawData&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <Assign sap:VirtualizedContainerService.HintSize="502,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[inFolderPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">C:\Users\balachandrasekhar.ch\OneDrive - Sobha LLC\Documents\UiPath\BankGuaranteeSecurityChequeAutomation\Data\Input\Bank Gaurantee Letters</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.pdf" Folder="[inFolderPath]" sap:VirtualizedContainerService.HintSize="502,2726" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,2424" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_FilePath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CurrentFile.ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="434,140" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[Taxonomy]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Taxonomy loaded successfully&quot;]" />
+            <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOM]" DocumentPath="[in_FilePath]" DocumentText="[DocText]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="434,406" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+              <p:DigitizeDocument.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument2="{x:Reference __ReferenceID0}">
+                  <ActivityFunc.Argument1>
+                    <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                  </ActivityFunc.Argument1>
+                  <p1:UiPathDocumentOCR Endpoint="{x:Null}" ImageFile="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="6jYV1NstFOBM73x0GrOlpiIDGXsLZkRnDUEytnGoO/QijlNS80HolGSeF+J/rLih6EQjzr1C7P9a2TF3lz6IWQ==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,92" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Image="[Image]" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" UseSeparateOcrProcess="True">
+                    <p1:UiPathDocumentOCR.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_2">
+                          <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID0" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p1:UiPathDocumentOCR.PredictionId>
+                    <p1:UiPathDocumentOCR.Source>
+                      <p1:OcrImageInput ImageFile="{x:Null}" Image="[Image]" />
+                    </p1:UiPathDocumentOCR.Source>
+                  </p1:UiPathDocumentOCR>
+                </ActivityFunc>
+              </p:DigitizeDocument.OCREngine>
+            </p:DigitizeDocument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;DocText : &quot;+DocText]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Digitizing document completed&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Promt]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">["You are an information extraction engine." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "Extract only the requested values from the document." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "Definitions" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "DocumentDate" &amp; Environment.NewLine &amp; "- Bank Guarantee issue date." &amp; Environment.NewLine &amp; "- Usually appears after ""Date:""." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "ExpiryDate" &amp; Environment.NewLine &amp; "- Bank Guarantee expiry date." &amp; Environment.NewLine &amp; "- Look for:" &amp; Environment.NewLine &amp; "  ""Expiry Date""" &amp; Environment.NewLine &amp; "  ""Valid Until""" &amp; Environment.NewLine &amp; "  ""Remain Valid Until""" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "GuaranteeNumber" &amp; Environment.NewLine &amp; "- Extract only the guarantee number." &amp; Environment.NewLine &amp; "- Look for:" &amp; Environment.NewLine &amp; "  ""Guarantee No""" &amp; Environment.NewLine &amp; "  ""Guarantee Number""" &amp; Environment.NewLine &amp; "  ""Guarantee Reference""" &amp; Environment.NewLine &amp; "  ""Reference No""" &amp; Environment.NewLine &amp; "  ""BG Number""" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "TypeOfGuarantee" &amp; Environment.NewLine &amp; "- Extract the guarantee type exactly as written." &amp; Environment.NewLine &amp; "- Examples:" &amp; Environment.NewLine &amp; "  Advance Payment Guarantee" &amp; Environment.NewLine &amp; "  Performance Guarantee" &amp; Environment.NewLine &amp; "  Demand Guarantee" &amp; Environment.NewLine &amp; "  Bid Bond" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "GuaranteeAmount" &amp; Environment.NewLine &amp; "- Amount secured by the guarantee." &amp; Environment.NewLine &amp; "- Do not use any Work Order amounts." &amp; Environment.NewLine &amp; "- Usually appears in the subject line or near Guarantee Number." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "NetAmount" &amp; Environment.NewLine &amp; "- Work Order Net Amount." &amp; Environment.NewLine &amp; "- Usually appears under ""Net Amount""." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "VATAmount" &amp; Environment.NewLine &amp; "- Work Order VAT Amount." &amp; Environment.NewLine &amp; "- Usually appears under ""VAT Amount""." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "TotalAmount" &amp; Environment.NewLine &amp; "- Work Order Total Amount including VAT." &amp; Environment.NewLine &amp; "- Usually appears under ""Total Amount"" or ""Order Total""." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "PaymentTerms" &amp; Environment.NewLine &amp; "- Extract complete payment terms exactly as written." &amp; Environment.NewLine &amp; "- Do not summarize." &amp; Environment.NewLine &amp; "- Do not rewrite." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "BankGuaranteePercentage" &amp; Environment.NewLine &amp; "- Extract only the percentage related to:" &amp; Environment.NewLine &amp; "  Bank Guarantee" &amp; Environment.NewLine &amp; "  Performance Guarantee" &amp; Environment.NewLine &amp; "  Advance Payment Guarantee" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "- Ignore:" &amp; Environment.NewLine &amp; "  VAT %" &amp; Environment.NewLine &amp; "  Tax %" &amp; Environment.NewLine &amp; "  Retention %" &amp; Environment.NewLine &amp; "  Discount %" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "Extraction Rules" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "1. Search all pages." &amp; Environment.NewLine &amp; "2. Use Bank Guarantee sections only for:" &amp; Environment.NewLine &amp; "   - DocumentDate" &amp; Environment.NewLine &amp; "   - ExpiryDate" &amp; Environment.NewLine &amp; "   - GuaranteeNumber" &amp; Environment.NewLine &amp; "   - TypeOfGuarantee" &amp; Environment.NewLine &amp; "   - GuaranteeAmount" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "3. Use Work Order sections only for:" &amp; Environment.NewLine &amp; "   - NetAmount" &amp; Environment.NewLine &amp; "   - VATAmount" &amp; Environment.NewLine &amp; "   - TotalAmount" &amp; Environment.NewLine &amp; "   - PaymentTerms" &amp; Environment.NewLine &amp; "   - BankGuaranteePercentage" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "4. Amount fields:" &amp; Environment.NewLine &amp; "   - Remove currency symbols." &amp; Environment.NewLine &amp; "   - Remove commas." &amp; Environment.NewLine &amp; "   - Return numeric values only." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "5. Date fields:" &amp; Environment.NewLine &amp; "   - Preserve original format from the document." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "6. If a value is not found:" &amp; Environment.NewLine &amp; "   - Return null" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "7. Return ONLY valid JSON." &amp; Environment.NewLine &amp; "8. Do not return markdown." &amp; Environment.NewLine &amp; "9. Do not return explanations." &amp; Environment.NewLine &amp; Environment.NewLine &amp; "Output Format" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "{" &amp; Environment.NewLine &amp; "  ""DocumentDate"": null," &amp; Environment.NewLine &amp; "  ""ExpiryDate"": null," &amp; Environment.NewLine &amp; "  ""GuaranteeNumber"": null," &amp; Environment.NewLine &amp; "  ""TypeOfGuarantee"": null," &amp; Environment.NewLine &amp; "  ""GuaranteeAmount"": null," &amp; Environment.NewLine &amp; "  ""NetAmount"": null," &amp; Environment.NewLine &amp; "  ""VATAmount"": null," &amp; Environment.NewLine &amp; "  ""TotalAmount"": null," &amp; Environment.NewLine &amp; "  ""PaymentTerms"": null," &amp; Environment.NewLine &amp; "  ""BankGuaranteePercentage"": null" &amp; Environment.NewLine &amp; "}" &amp; Environment.NewLine &amp; Environment.NewLine &amp; "Document Content:" &amp; Environment.NewLine &amp; Environment.NewLine &amp; DocText]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <isactr:ConnectorActivity Configuration="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" ConnectionId="d199f207-c418-459f-8e48-14c885626ecd" DisplayName="Content Generation" sap:VirtualizedContainerService.HintSize="434,428" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+              <isactr:ConnectorActivity.FieldObjects>
+                <isactr:FieldObject Name="prompt" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">[Promt]</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+                <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+                <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+                <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+                <isactr:FieldObject Name="topK" Type="FieldArgument" />
+                <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">None</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="_file" Type="FieldArgument" />
+                <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+                <isactr:FieldObject Name="topP" Type="FieldArgument" />
+                <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+                <isactr:FieldObject Name="max_tokens" Type="FieldArgument" />
+                <isactr:FieldObject Name="temperature" Type="FieldArgument" />
+                <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument" />
+                <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+                <isactr:FieldObject Name="presence_penalty" Type="FieldArgument" />
+                <isactr:FieldObject Name="n" Type="FieldArgument" />
+                <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+                <isactr:FieldObject Name="_stop" Type="FieldArgument" />
+                <isactr:FieldObject Name="modelName" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="instruction" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <InArgument x:TypeArguments="x:String">You are a helpful assistant</InArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_text" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String">[out_Text]</OutArgument>
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+                <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+                  <isactr:FieldObject.Value>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </isactr:FieldObject.Value>
+                </isactr:FieldObject>
+              </isactr:ConnectorActivity.FieldObjects>
+            </isactr:ConnectorActivity>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[out_Text]" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="njl:JObject">[jsonObj]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="njl:JObject">[Newtonsoft.Json.Linq.JObject.Parse(out_Text)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&#xA;jsonObj(&quot;DocumentDate&quot;).ToString,&#xA;jsonObj(&quot;ExpiryDate&quot;).ToString,&#xA;jsonObj(&quot;GuaranteeNumber&quot;).ToString,&#xA;jsonObj(&quot;TypeOfGuarantee&quot;).ToString,&#xA;jsonObj(&quot;GuaranteeAmount&quot;).ToString,&#xA;jsonObj(&quot;NetAmount&quot;).ToString,&#xA;jsonObj(&quot;VATAmount&quot;).ToString,&#xA;jsonObj(&quot;TotalAmount&quot;).ToString,&#xA;DocText&#xA;}]" DataTable="[dt_temp]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="434,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <Assign sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="njl:JObject">[jsonObj]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="njl:JObject">[Nothing]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachFileX>
+    <ui:FileExistsX DisplayName="File Exists" Exists="[fileExist]" sap:VirtualizedContainerService.HintSize="502,168.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="C:\Users\balachandrasekhar.ch\OneDrive - Sobha LLC\Documents\UiPath\BankGuaranteeSecurityChequeAutomation\Data\Output\ExtractedData.xlsx" />
+    <If Condition="[fileExist]" sap:VirtualizedContainerService.HintSize="502,703.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,198.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AppendRange DataTable="[dt_temp]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="382,138.66666666666666" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\balachandrasekhar.ch\OneDrive - Sobha LLC\Documents\UiPath\BankGuaranteeSecurityChequeAutomation\Data\Output\ExtractedData.xlsx" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,332.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:WriteRange StartingCell="{x:Null}" DataTable="[dt_temp]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="382,272.6666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\balachandrasekhar.ch\OneDrive - Sobha LLC\Documents\UiPath\BankGuaranteeSecurityChequeAutomation\Data\Output\ExtractedData.xlsx" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502,48" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,165.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <p2:ClassifyDocumentScope ClassificationResults="[ClassificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="Data\Input\BANK LETTER AND WO.pdf" DocumentText="[DocText]" sap:VirtualizedContainerService.HintSize="382,57.333333333333336" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[Taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI119177c68d504488bfb75b5be94d20be&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.BankGuarantee&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;NoGroup.NoCategory.BankGuarantee&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;\&quot;Bank guarantee with guarantee number, amount, beneficiary, effective date and expiry date\&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;NoGroup.NoCategory.SecurityCheque&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;NoGroup.NoCategory.SecurityCheque&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;\&quot;Security cheque, account number, IBAN, signature verification or cheque document\&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;NoGroup.NoCategory.WorkOrder&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;NoGroup.NoCategory.WorkOrder&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;\&quot;Work order or purchase order containing payment terms, vendor and order total\&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI119177c68d504488bfb75b5be94d20be&quot;:&quot;65&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI119177c68d504488bfb75b5be94d20be&quot;:[]}}">
+            <p2:ClassifyDocumentScope.Classifiers>
+              <p3:GenerativeClassifier ReferenceDocumentId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" DisplayName="Generative Classifier" sap:VirtualizedContainerService.HintSize="282,76" sap2010:WorkflowViewState.IdRef="GenerativeClassifier_2" PersistenceId="UI119177c68d504488bfb75b5be94d20be" Prompt="[{&quot;id&quot;:&quot;NoGroup.NoCategory.BankGuarantee&quot;,&quot;name&quot;:&quot;BankGuarantee&quot;,&quot;prompt&quot;:&quot;Bank guarantee document containing guarantee number, amount, effective date, expiry date, beneficiary and applicant details.&quot;},{&quot;id&quot;:&quot;NoGroup.NoCategory.SecurityCheque&quot;,&quot;name&quot;:&quot;SecurityCheque&quot;,&quot;prompt&quot;:&quot;Security cheque or bank attestation document containing cheque amount, account number, IBAN and signature verification.&quot;},{&quot;id&quot;:&quot;NoGroup.NoCategory.WorkOrder&quot;,&quot;name&quot;:&quot;WorkOrder&quot;,&quot;prompt&quot;:&quot;Work order or purchase order containing vendor details, payment terms, order total, retention and project information.&quot;}]" RetryOnFailure="True" Timeout="3600000">
+                <p3:GenerativeClassifier.AvailableAssetPaths>
+                  <x:Array Type="x:String">
+                    <x:String>uipath@sobharealty.com's workspace/AKV_RedfinUN</x:String>
+                    <x:String>Shared/AKV_RedfinUN1</x:String>
+                    <x:String>Shared/redfintest</x:String>
+                    <x:String>Shared/RedfineCred</x:String>
+                    <x:String>Shared/Azure_ClientSecret</x:String>
+                    <x:String>Shared/TestCred</x:String>
+                    <x:String>Shared/Test_Dewa_Credential</x:String>
+                    <x:String>Shared/OB_APILoginCredentials</x:String>
+                    <x:String>Shared/SalesforceCredentials</x:String>
+                    <x:String>Sobha Accounts/Finance and Accounts/Total Account Summary Upload/Cred_ExcelSheetPassword</x:String>
+                    <x:String>Sobha Constructions/Administration/CUG Etisalat Report Creation/SC_Admin_P004_A001_EtisalatPortal_Credentials</x:String>
+                    <x:String>Sobha_P&amp;M/TORAI/SC_PM_P001_A002_TOR_Login_Credentials</x:String>
+                    <x:String>Sobha_P&amp;M/Alshola/S_P&amp;M_P001_A001_AL_SholaCredintials</x:String>
+                    <x:String>Sobha_P&amp;M/TANK_VOLUME_REPORT_PROCESS/ARGOSLoginCredentials</x:String>
+                    <x:String>Sobha_P&amp;M/ALSHOLA_DG_PEAK_DAILY_CONSUMPTION_REPORT/SPM_Alshola_P001_A027_Alshola_Credentials</x:String>
+                    <x:String>Sobha Constructions/IDEA/SC_IDEA_P001_I_02_IndonisCredintials</x:String>
+                    <x:String>Shared/OBT_Login_API_Credentials</x:String>
+                  </x:Array>
+                </p3:GenerativeClassifier.AvailableAssetPaths>
+                <p3:GenerativeClassifier.ClassifierResult>
+                  <OutArgument x:TypeArguments="p5:ClassifierResult">
+                    <DelegateArgumentReference x:TypeArguments="p5:ClassifierResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_1">
+                      <DelegateOutArgument x:TypeArguments="p5:ClassifierResult" Name="ClassifierResult" />
+                    </DelegateArgumentReference>
+                  </OutArgument>
+                </p3:GenerativeClassifier.ClassifierResult>
+                <p3:GenerativeClassifier.DocumentObjectModel>
+                  <InArgument x:TypeArguments="p4:Document">
+                    <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_7">
+                      <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.DocumentObjectModel>
+                <p3:GenerativeClassifier.DocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_8">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.DocumentPath>
+                <p3:GenerativeClassifier.DocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_6">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.DocumentText>
+                <p3:GenerativeClassifier.DocumentTypes>
+                  <InArgument x:TypeArguments="p5:ClassifierDocumentType[]">
+                    <DelegateArgumentValue x:TypeArguments="p5:ClassifierDocumentType[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_10">
+                      <DelegateInArgument x:TypeArguments="p5:ClassifierDocumentType[]" Name="DocumentTypes" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.DocumentTypes>
+                <p3:GenerativeClassifier.OriginalDocumentObjectModel>
+                  <InArgument x:TypeArguments="p4:Document">
+                    <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_4">
+                      <DelegateInArgument x:TypeArguments="p4:Document" Name="OriginalDocumentObjectModel" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.OriginalDocumentObjectModel>
+                <p3:GenerativeClassifier.OriginalDocumentPath>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_5">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="OriginalDocumentPath" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.OriginalDocumentPath>
+                <p3:GenerativeClassifier.OriginalDocumentText>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_3">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="OriginalDocumentText" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.OriginalDocumentText>
+                <p3:GenerativeClassifier.PredictionId>
+                  <InArgument x:TypeArguments="x:String">
+                    <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_9">
+                      <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                    </DelegateArgumentValue>
+                  </InArgument>
+                </p3:GenerativeClassifier.PredictionId>
+              </p3:GenerativeClassifier>
+            </p2:ClassifyDocumentScope.Classifiers>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p2:ClassifyDocumentScope>
+          <If Condition="[ClassificationResults.Count&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="614,1330.6666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="580,1100" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="out_DocumentType" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="546,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_DocumentType]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[ClassificationResults(0).DocumentTypeId]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Classification Result: &quot;+out_DocumentType]" />
+                <If Condition="[out_DocumentType.Equals(&quot;BankGuarantee&quot;)]" sap:VirtualizedContainerService.HintSize="546,746" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,492.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="p8:ClassificationResult" Name="ClassificationResult" />
+                        <Variable x:TypeArguments="p8:ExtractionResult" Name="ExtractionResults" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <p6:DataExtractionScope DocumentTypeId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyGenerativeValidation="False" ClassificationResult="[ClassificationResult]" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOM]" DocumentPath="[in_FilePath]" DocumentText="[DocText]" ExtractionResult="[ExtractionResults]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="478,432.6666666666667" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[Taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIa65487cbf4fe41d29e2733e5119c3fe3&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;NoGroup.NoCategory.BankGuarantee&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.BankGuarantee.ValueDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.ValueDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the date on which the bank guarantee or guarantee advice was issued.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeReferenceNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeReferenceNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the guarantee number, guarantee reference number, guarantee ref or guarantee no.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.TypeOfGuarantee&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.TypeOfGuarantee&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the type of guarantee such as Performance Guarantee, Advance Payment Guarantee, Bid Bond, Demand Guarantee or Bank Guarantee.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the guarantee amount including currency.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.EffectiveDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.EffectiveDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the guarantee effective date, issue date or operative date.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.ExpiryDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.ExpiryDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the guarantee expiry date or validity date.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.Applicant&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.Applicant&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the applicant, contractor, supplier or company requesting the guarantee.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.Beneficiary&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.Beneficiary&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the beneficiary receiving the guarantee.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.Address&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.Address&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the complete beneficiary or applicant address.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.AccountNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.AccountNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the account number, account no, A/C number or IBAN.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.SignaturePresent&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.SignaturePresent&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Determine whether an authorized signature is present. Return Yes or No.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.BankGuarantee.BankSealPresent&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.BankGuarantee.BankSealPresent&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Determine whether an official bank stamp, bank seal or bank authentication is present. Return Yes or No.\&quot;&quot;,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:&quot;&quot;},&quot;NoGroup.NoCategory.SecurityCheque&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.SecurityCheque.ChequeAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.SecurityCheque.ChequeAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the cheque amount including currency and numeric value.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.SecurityCheque.ChequeDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.SecurityCheque.ChequeDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the cheque date.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.SecurityCheque.AccountNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.SecurityCheque.AccountNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the account number associated with the cheque.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.SecurityCheque.AccountHolder&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.SecurityCheque.AccountHolder&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the account holder or company name.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.SecurityCheque.SignaturePresent&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.SecurityCheque.SignaturePresent&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Determine whether a customer signature is present. Return Yes or No.\&quot;&quot;,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;NoGroup.NoCategory.WorkOrder&quot;:{&quot;FieldMappings&quot;:{&quot;NoGroup.NoCategory.WorkOrder.WorkOrderNo&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.WorkOrder.WorkOrderNo&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the work order number, purchase order number, WO number or PO number.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.WorkOrder.PaymentTerms&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.WorkOrder.PaymentTerms&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the complete payment terms section exactly as written without summarizing.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.WorkOrder.TotalAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.WorkOrder.TotalAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the total order amount including currency.\&quot;&quot;,&quot;ShouldExtract&quot;:true},&quot;NoGroup.NoCategory.WorkOrder.Vendor&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;NoGroup.NoCategory.WorkOrder.Vendor&quot;,&quot;ExtractorTaxonomyFieldId&quot;:&quot;\&quot;Extract the vendor, supplier or subcontractor name.\&quot;&quot;,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIa65487cbf4fe41d29e2733e5119c3fe3&quot;:&quot;65&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIa65487cbf4fe41d29e2733e5119c3fe3&quot;:[]}}">
+                        <p6:DataExtractionScope.AvailableAssetPaths>
+                          <x:Array Type="x:String">
+                            <x:String>uipath@sobharealty.com's workspace/AKV_RedfinUN</x:String>
+                            <x:String>Shared/AKV_RedfinUN1</x:String>
+                            <x:String>Shared/redfintest</x:String>
+                            <x:String>Shared/RedfineCred</x:String>
+                            <x:String>Shared/Azure_ClientSecret</x:String>
+                            <x:String>Shared/TestCred</x:String>
+                            <x:String>Shared/Test_Dewa_Credential</x:String>
+                            <x:String>Shared/OB_APILoginCredentials</x:String>
+                            <x:String>Shared/SalesforceCredentials</x:String>
+                            <x:String>Sobha Accounts/Finance and Accounts/Total Account Summary Upload/Cred_ExcelSheetPassword</x:String>
+                            <x:String>Sobha Constructions/Administration/CUG Etisalat Report Creation/SC_Admin_P004_A001_EtisalatPortal_Credentials</x:String>
+                            <x:String>Sobha_P&amp;M/TORAI/SC_PM_P001_A002_TOR_Login_Credentials</x:String>
+                            <x:String>Sobha_P&amp;M/Alshola/S_P&amp;M_P001_A001_AL_SholaCredintials</x:String>
+                            <x:String>Sobha_P&amp;M/TANK_VOLUME_REPORT_PROCESS/ARGOSLoginCredentials</x:String>
+                            <x:String>Sobha_P&amp;M/ALSHOLA_DG_PEAK_DAILY_CONSUMPTION_REPORT/SPM_Alshola_P001_A027_Alshola_Credentials</x:String>
+                            <x:String>Sobha Constructions/IDEA/SC_IDEA_P001_I_02_IndonisCredintials</x:String>
+                            <x:String>Shared/OBT_Login_API_Credentials</x:String>
+                          </x:Array>
+                        </p6:DataExtractionScope.AvailableAssetPaths>
+                        <p6:DataExtractionScope.Extractors>
+                          <p3:GenerativeExtractor ReferenceDocumentId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" DisplayName="Generative Extractor" GenerativeModelsForDocumentType="{}{&quot;NoGroup.NoCategory.BankGuarantee&quot;:{&quot;Id&quot;:&quot;generative_extractor&quot;,&quot;Name&quot;:&quot;Long Document Simple Layout Extractor&quot;,&quot;DocumentTypeId&quot;:&quot;&quot;,&quot;Status&quot;:7,&quot;DetailsUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor?api-version=2.0&quot;,&quot;SyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction?api-version=2.0&quot;,&quot;AsyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction/start?api-version=2.0&quot;,&quot;ProjectVersion&quot;:null,&quot;ProjectVersionName&quot;:null,&quot;ResourceType&quot;:&quot;Generative&quot;,&quot;Description&quot;:null},&quot;NoGroup.NoCategory.SecurityCheque&quot;:{&quot;Id&quot;:&quot;generative_extractor&quot;,&quot;Name&quot;:&quot;Long Document Simple Layout Extractor&quot;,&quot;DocumentTypeId&quot;:&quot;&quot;,&quot;Status&quot;:7,&quot;DetailsUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor?api-version=2.0&quot;,&quot;SyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction?api-version=2.0&quot;,&quot;AsyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction/start?api-version=2.0&quot;,&quot;ProjectVersion&quot;:null,&quot;ProjectVersionName&quot;:null,&quot;ResourceType&quot;:&quot;Generative&quot;,&quot;Description&quot;:null},&quot;NoGroup.NoCategory.WorkOrder&quot;:{&quot;Id&quot;:&quot;generative_extractor&quot;,&quot;Name&quot;:&quot;Long Document Simple Layout Extractor&quot;,&quot;DocumentTypeId&quot;:&quot;&quot;,&quot;Status&quot;:7,&quot;DetailsUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor?api-version=2.0&quot;,&quot;SyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction?api-version=2.0&quot;,&quot;AsyncUrl&quot;:&quot;https://cloud.uipath.com:443/3c064ee8-40b0-4f94-b154-835b3026db49/26d5b30b-3091-45a2-a844-da76a559a3ca/du_/api/framework/projects/00000000-0000-0000-0000-000000000001/extractors/generative_extractor/extraction/start?api-version=2.0&quot;,&quot;ProjectVersion&quot;:null,&quot;ProjectVersionName&quot;:null,&quot;ResourceType&quot;:&quot;Generative&quot;,&quot;Description&quot;:null}}" sap:VirtualizedContainerService.HintSize="282,76" sap2010:WorkflowViewState.IdRef="GenerativeExtractor_2" PersistenceId="UIa65487cbf4fe41d29e2733e5119c3fe3" Prompt="{}{&quot;NoGroup.NoCategory.BankGuarantee.ValueDate&quot;:&quot;Date on which the guarantee or bank letter was issued.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeReferenceNo&quot;:&quot;Guarantee number, guarantee reference number, guarantee ref or guarantee no.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.TypeOfGuarantee&quot;:&quot;Type of bank guarantee such as Performance Guarantee, Advance Payment Guarantee, Bid Bond or Demand Guarantee.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.GuaranteeAmount&quot;:&quot;Guaranteed amount including currency such as AED, EUR or USD.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.EffectiveDate&quot;:&quot;Guarantee effective date, operational date or date of issue.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.ExpiryDate&quot;:&quot;Guarantee expiry date, validity date or expiration date.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.Applicant&quot;:&quot;Applicant, contractor, supplier or company requesting the guarantee.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.Beneficiary&quot;:&quot;Beneficiary receiving the guarantee amount.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.Address&quot;:&quot;Full address of applicant or beneficiary mentioned in the guarantee.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.AccountNumber&quot;:&quot;Account number, A/C number, IBAN or beneficiary account number.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.SignaturePresent&quot;:&quot;Determine whether an authorized bank signature is present. Return Yes or No.&quot;,&quot;NoGroup.NoCategory.BankGuarantee.BankSealPresent&quot;:&quot;Determine whether a bank stamp, bank seal or official bank authentication is present. Return Yes or No.&quot;,&quot;NoGroup.NoCategory.SecurityCheque.ChequeAmount&quot;:&quot;Cheque amount including currency and numeric value.&quot;,&quot;NoGroup.NoCategory.SecurityCheque.ChequeDate&quot;:&quot;Cheque date mentioned on the cheque.&quot;,&quot;NoGroup.NoCategory.SecurityCheque.AccountNumber&quot;:&quot;Customer account number or account no.&quot;,&quot;NoGroup.NoCategory.SecurityCheque.AccountHolder&quot;:&quot;Account holder name or company name on the cheque.&quot;,&quot;NoGroup.NoCategory.SecurityCheque.SignaturePresent&quot;:&quot;Determine whether customer signature is present. Return Yes or No.&quot;,&quot;NoGroup.NoCategory.WorkOrder.WorkOrderNo&quot;:&quot;Work order number, purchase order number, WO number or PO number.&quot;,&quot;NoGroup.NoCategory.WorkOrder.PaymentTerms&quot;:&quot;Vendor name, supplier name, subcontractor name or contractor name.&quot;,&quot;NoGroup.NoCategory.WorkOrder.TotalAmount&quot;:&quot;Total order value including currency and taxes.&quot;,&quot;NoGroup.NoCategory.WorkOrder.Vendor&quot;:&quot;Extract the complete payment terms section exactly as written without summarizing.&quot;}" RetryOnFailure="True" Timeout="3600000">
+                            <p3:GenerativeExtractor.AvailableAssetPaths>
+                              <x:Array Type="x:String">
+                                <x:String>uipath@sobharealty.com's workspace/AKV_RedfinUN</x:String>
+                                <x:String>Shared/AKV_RedfinUN1</x:String>
+                                <x:String>Shared/redfintest</x:String>
+                                <x:String>Shared/RedfineCred</x:String>
+                                <x:String>Shared/Azure_ClientSecret</x:String>
+                                <x:String>Shared/TestCred</x:String>
+                                <x:String>Shared/Test_Dewa_Credential</x:String>
+                                <x:String>Shared/OB_APILoginCredentials</x:String>
+                                <x:String>Shared/SalesforceCredentials</x:String>
+                                <x:String>Sobha Accounts/Finance and Accounts/Total Account Summary Upload/Cred_ExcelSheetPassword</x:String>
+                                <x:String>Sobha Constructions/Administration/CUG Etisalat Report Creation/SC_Admin_P004_A001_EtisalatPortal_Credentials</x:String>
+                                <x:String>Sobha_P&amp;M/TORAI/SC_PM_P001_A002_TOR_Login_Credentials</x:String>
+                                <x:String>Sobha_P&amp;M/Alshola/S_P&amp;M_P001_A001_AL_SholaCredintials</x:String>
+                                <x:String>Sobha_P&amp;M/TANK_VOLUME_REPORT_PROCESS/ARGOSLoginCredentials</x:String>
+                                <x:String>Sobha_P&amp;M/ALSHOLA_DG_PEAK_DAILY_CONSUMPTION_REPORT/SPM_Alshola_P001_A027_Alshola_Credentials</x:String>
+                                <x:String>Sobha Constructions/IDEA/SC_IDEA_P001_I_02_IndonisCredintials</x:String>
+                                <x:String>Shared/OBT_Login_API_Credentials</x:String>
+                              </x:Array>
+                            </p3:GenerativeExtractor.AvailableAssetPaths>
+                            <p3:GenerativeExtractor.DocumentBounds>
+                              <InArgument x:TypeArguments="p8:ResultsDocumentBounds">
+                                <DelegateArgumentValue x:TypeArguments="p8:ResultsDocumentBounds" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_15">
+                                  <DelegateInArgument x:TypeArguments="p8:ResultsDocumentBounds" Name="DocumentBounds" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.DocumentBounds>
+                            <p3:GenerativeExtractor.DocumentObjectModel>
+                              <InArgument x:TypeArguments="p4:Document">
+                                <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_17">
+                                  <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.DocumentObjectModel>
+                            <p3:GenerativeExtractor.DocumentPath>
+                              <InArgument x:TypeArguments="x:String">
+                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_18">
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.DocumentPath>
+                            <p3:GenerativeExtractor.DocumentText>
+                              <InArgument x:TypeArguments="x:String">
+                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_16">
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.DocumentText>
+                            <p3:GenerativeExtractor.ExtractorDocumentType>
+                              <InArgument x:TypeArguments="p7:ExtractorDocumentType">
+                                <DelegateArgumentValue x:TypeArguments="p7:ExtractorDocumentType" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_14">
+                                  <DelegateInArgument x:TypeArguments="p7:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.ExtractorDocumentType>
+                            <p3:GenerativeExtractor.ExtractorResult>
+                              <OutArgument x:TypeArguments="p7:ExtractorResult">
+                                <DelegateArgumentReference x:TypeArguments="p7:ExtractorResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_2">
+                                  <DelegateOutArgument x:TypeArguments="p7:ExtractorResult" Name="ExtractorResult" />
+                                </DelegateArgumentReference>
+                              </OutArgument>
+                            </p3:GenerativeExtractor.ExtractorResult>
+                            <p3:GenerativeExtractor.OriginalDocumentObjectModel>
+                              <InArgument x:TypeArguments="p4:Document">
+                                <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_12">
+                                  <DelegateInArgument x:TypeArguments="p4:Document" Name="OriginalDocumentObjectModel" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.OriginalDocumentObjectModel>
+                            <p3:GenerativeExtractor.OriginalDocumentPath>
+                              <InArgument x:TypeArguments="x:String">
+                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_13">
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="OriginalDocumentPath" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.OriginalDocumentPath>
+                            <p3:GenerativeExtractor.OriginalDocumentText>
+                              <InArgument x:TypeArguments="x:String">
+                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_11">
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="OriginalDocumentText" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.OriginalDocumentText>
+                            <p3:GenerativeExtractor.PredictionId>
+                              <InArgument x:TypeArguments="x:String">
+                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_19">
+                                  <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                                </DelegateArgumentValue>
+                              </InArgument>
+                            </p3:GenerativeExtractor.PredictionId>
+                          </p3:GenerativeExtractor>
+                        </p6:DataExtractionScope.Extractors>
+                      </p6:DataExtractionScope>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Days To Expiry",
+  "Type": "Element",
+  "Id": "ulJQS4APvk-Zx3FfN03b5Q",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/ulJQS4APvk-Zx3FfN03b5Q",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T10:26:52.7765412Z",
+  "Updated": "2026-08-20T10:26:52.7765412Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

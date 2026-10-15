@@ -1,0 +1,73 @@
+{
+  "name": "Vendor_Guarantee_Automation_Performer",
+  "projectId": "a4a67acb-8186-4986-8bfc-f800f5168efe",
+  "previousProjectId": "4378d1a7-69d0-4f39-b0e2-2da0993275fe",
+  "description": "The process involves the automated registration and monitoring of Vendor Guarantees, including the extraction and validation of guarantee details from vendor-submitted documents and Purchase Orders, updating guarantee records in Xpedeon and the Bank Guarantee Tracker, tracking recovery balances, monitoring guarantee expiries, and triggering reminder notifications to relevant stakeholders until the guarantee is recovered, released, or closed.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Library_Data_Extraction_Using_Azure_Document_Intelligence": "[1.0.4]",
+    "UiPath.Azure.Activities": "[1.5.2]",
+    "UiPath.DocumentUnderstanding.Activities": "[3.3.0]",
+    "UiPath.DocumentUnderstanding.ML.Activities": "[2.3.0]",
+    "UiPath.Excel.Activities": "3.4.1",
+    "UiPath.IntegrationService.Activities": "[1.33.0]",
+    "UiPath.IntelligentOCR.Activities": "[7.3.0]",
+    "UiPath.Mail.Activities": "[2.7.11]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.0.14]",
+    "UiPath.PDF.Activities": "[4.3.0]",
+    "UiPath.System.Activities": "25.12.2",
+    "UiPath.Testing.Activities": "[24.10.4]",
+    "UiPath.UIAutomation.Activities": "[24.10.13]",
+    "UiPath.WebAPI.Activities": "[2.5.2]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "24.10.14.0",
+  "projectVersion": "1.0.12",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false,
+    "cloudProjectUrl": "https://cloud.uipath.com/sobhallc/studio_/designer/a4a67acb-8186-4986-8bfc-f800f5168efe"
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "5cd5d6a6-9b20-4a19-8fef-fa4dd1f97f34",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

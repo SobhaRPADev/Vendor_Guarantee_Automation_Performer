@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Expiry",
+  "Type": "Element",
+  "Id": "rUBZAIlx0EyJYe-59FQi-Q",
+  "Reference": "4Yi7nbuRyUibEjenBUYEyQ/rUBZAIlx0EyJYe-59FQi-Q",
+  "ParentRef": "4Yi7nbuRyUibEjenBUYEyQ/PrqnyNbK_UW-8vrVFk7frw",
+  "Created": "2026-08-20T10:21:04.1872248Z",
+  "Updated": "2026-08-20T10:21:04.1872248Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Notification</title>
+
+<style>
+/* Reset */
+body, table, td, a {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+table {
+    border-collapse: collapse !important;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    font-family: Tahoma, "Trebuchet MS", sans-serif;
+    background-color: #414a51;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background-color: #d6b46b;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Content */
+.content {
+    padding: 25px;
+    font-size: 16px;
+    color: #555555;
+    line-height: 26px;
+}
+
+/* Button */
+.btn-container {
+    text-align: center;
+    margin: 25px 0;
+}
+.btn {
+    display: inline-block;
+    background-color: #0087ff;
+    color: #ffffff !important;
+    padding: 12px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background-color: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #95a5a6;
+}
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+    .content {
+        padding: 18px;
+        font-size: 15px;
+    }
+    .btn {
+        width: 90%;
+        padding: 14px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" style="padding:40px 10px;">
+
+    <table class="container" width="100%" cellpadding="0" cellspacing="0">
+        
+        <!-- Header -->
+        <tr>
+            <td class="header">
+                {ProcessName}
+            </td>
+        </tr>
+
+        <!-- Content -->
+        <tr>
+            <td class="content">
+		<div style="text-align:center;padding:2px;margin-bottom:0;">
+			{LogoImage}
+		</div>
+
+                <div>{Desc}</div>
+                <br>
+
+                <b>Here are the key details of completion:</b><br><br>
+
+                <b>Outcome:</b> {Outcome}<br>
+                <b>Date Time:</b> {DateTime}
+
+                <div style="margin-top:20px;">
+    
+</div>
+
+
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td class="footer">
+                This is a system generated email.
+            </td>
+        </tr>
+
+    </table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

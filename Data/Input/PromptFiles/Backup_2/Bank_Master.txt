@@ -1,0 +1,83 @@
+AABK = Al Ahli Bank of Kuwait
+AAIB = Arab African International Bank
+AB = Arab Bank
+ABCL = Agricultural Bank of China Ltd
+ABP = Arab Bank PLC
+ABPJSC = Ajman Bank P.J.S.C
+ADCB = Abu Dhabi Commercial Bank (ADCB)
+ADIB = Abu Dhabi Islamic Bank P.J.S.C
+ADIBPSC = Abu Dhabi Islamic Bank P.J.S.C
+AHBP = Al Hilal Bank P.J.S.C
+AKSA = Al Khaliji (France) S.A
+AMB = Al Masraf Bank
+AMCB = Al Maryah Community Bank L.L.C
+BAFL = Bank Al Falah Limited
+BBF  = Banque Banorient France
+BBP  = Barclays Bank PLC
+BCL  = Bank of China Limited
+BM   = Bank MuscatT
+BMI  = Bank Melli Iran
+BMISR =  Banque Misr
+BNKIR =  Bank Saderat Iran
+BNP   =  BNP Paribas
+BOB   =  Bank of Baroda
+BOK   =  BOK International Bank
+BSPJSC = Bank of Sharjah P.J.S.C
+CB  =  CitiBank N.A
+CBD =  CBD Bank
+CBIP = Commercial Bank International P.J.S.C
+CZB =  Commerz Bank
+DB  =  Doha Bank
+DBA  =   Deutsche Bank AG
+DIBPSC = Dubai Islamic Bank P.J.S.C
+EIBP =   Emirates Islamic Bank P.J.S.C
+ENBD  =  Emirates NBD
+FAB   =  First Abu Dhabi Bank
+FH   =   Finance House
+GI   =  Gulf International Bank B.S.C
+HB   =   Habib Bank
+HSBC =   HSBC Bank Middle East Limited
+IB   =   Invest Bank
+ICBC  =  Industrial & Commercial Bank of China
+ISSPA =  Intesa Sanpaolo S.P.A
+JBPLC =  Janata Bank PLC
+KEB   =  KEB Hana Bank
+MBPSC =  Mashreq Bank P.S.C
+MCB   =  MCB Bank Limited
+NB   =   Noor Bank
+NBB  =   National Bank of Bahrain
+NBOK =   National Bank of Kuwait
+NBUA =   National Bank of Umm Al Quwain
+OT   =   Other
+RAK  =   RAK Bank
+SCB  =   Standard Chartered Bank
+SIBPSC = Sharjah Islamic Bank P.J.S.C.
+SNB   =  The Saudi National Bank
+UAB  =   United Arab Bank
+UB   =   United Bank Ltd.
+UNB  =   Union National Bank
+WIOB =   WIO Bank P.J.S.C
+ZBPJ =   Zand Bank P.J.S.C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

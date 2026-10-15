@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family: 'Open Sans', sans-serif;}
+</style>
+</head>
+<body>
+<p>
+<br><br>
+Dear Team,<br><br>RPA process - 'Process Name' failed with Exception  <br>
+<b>Message :</b> {0} <br><b>Source :</b> {1}
+<br><br> 
+Thanks,</p><br>
+<div style="color:#BD8B13">Digital RPA BOT</div><br>
+</body>
+</html>
